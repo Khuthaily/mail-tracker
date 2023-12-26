@@ -35,6 +35,12 @@
         "orchestra/testbench": "^8.0",
         "mockery/mockery": "^1.4.4"
     },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/khuthaily/mail-tracker"
+        }
+    ],
     "suggest": {
         "fedeisas/laravel-mail-css-inliner": "Automatically inlines CSS into all outgoing mail."
     },
