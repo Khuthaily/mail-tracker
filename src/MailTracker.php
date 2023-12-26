@@ -245,7 +245,7 @@ class MailTracker
     {
         foreach ($message->getTo() as $toAddress) {
             $to_email = $toAddress->getAddress();
-            $to_name = $toAddress->getName();
+            // $to_name = $toAddress->getName(); // use 'user_id' instead
             foreach ($message->getFrom() as $fromAddress) {
                 $from_email = $fromAddress->getAddress();
                 $from_name = $fromAddress->getName();
@@ -256,6 +256,10 @@ class MailTracker
                     // Don't track this email
                     continue;
                 }
+                // all tracked emails have the 'X-User-ID' header
+                // save it in a variable; then, remove it
+                $user_id = $headers->get('X-User-ID')->getBody();
+                $headers->remove('X-User-ID');
                 do {
                     $hash = app(Str::class)->random(32);
                     $used = MailTracker::sentEmailModel()->newQuery()->where('hash', $hash)->count();
@@ -317,11 +321,12 @@ class MailTracker
 
                 /** @var SentEmail $tracker */
                 $tracker = tap(MailTracker::sentEmailModel([
+                    'user_id' => $user_id, // good for model relationships
                     'hash' => $hash,
                     'headers' => $headers->toString(),
                     'sender_name' => $from_name,
                     'sender_email' => $from_email,
-                    'recipient_name' => $to_name,
+                    // 'recipient_name' => $to_name, // no need; 'user_id' is better
                     'recipient_email' => $to_email,
                     'subject' => $subject,
                     'opens' => 0,
