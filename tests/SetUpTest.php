@@ -1,6 +1,6 @@
 <?php
 
-namespace jdavidbakr\MailTracker\Tests;
+namespace Khuthaily\MailTracker\Tests;
 
 use Orchestra\Testbench\TestCase;
 
@@ -30,7 +30,7 @@ abstract class SetUpTest extends TestCase
      */
     protected function getPackageProviders($app)
     {
-        return ['jdavidbakr\MailTracker\MailTrackerServiceProvider'];
+        return ['Khuthaily\MailTracker\MailTrackerServiceProvider'];
     }
 
     /**
