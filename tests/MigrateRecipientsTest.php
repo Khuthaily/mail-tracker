@@ -1,11 +1,11 @@
 <?php
 
-namespace jdavidbakr\MailTracker\Tests;
+namespace Khuthaily\MailTracker\Tests;
 
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
-use jdavidbakr\MailTracker\Console\MigrateRecipients;
-use jdavidbakr\MailTracker\MailTracker;
+use Khuthaily\MailTracker\Console\MigrateRecipients;
+use Khuthaily\MailTracker\MailTracker;
 
 class MigrateRecipientsTest extends SetUpTest
 {
