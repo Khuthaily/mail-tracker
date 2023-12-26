@@ -1,6 +1,6 @@
 <?php
 
-namespace jdavidbakr\MailTracker\Exceptions;
+namespace Khuthaily\MailTracker\Exceptions;
 
 use Exception;
 
