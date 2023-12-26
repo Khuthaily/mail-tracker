@@ -1,6 +1,6 @@
 <?php
 
-namespace jdavidbakr\MailTracker;
+namespace Khuthaily\MailTracker;
 
 use Closure;
 use Illuminate\Database\Eloquent\Model;
@@ -10,10 +10,10 @@ use Illuminate\Mail\SentMessage;
 use Illuminate\Support\Facades\Event;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
-use jdavidbakr\MailTracker\Contracts\SentEmailModel;
-use jdavidbakr\MailTracker\Events\EmailSentEvent;
-use jdavidbakr\MailTracker\Model\SentEmail;
-use jdavidbakr\MailTracker\Model\SentEmailUrlClicked;
+use Khuthaily\MailTracker\Contracts\SentEmailModel;
+use Khuthaily\MailTracker\Events\EmailSentEvent;
+use Khuthaily\MailTracker\Model\SentEmail;
+use Khuthaily\MailTracker\Model\SentEmailUrlClicked;
 use Symfony\Component\Mime\Email;
 use Symfony\Component\Mime\Part\Multipart\AlternativePart;
 use Symfony\Component\Mime\Part\Multipart\MixedPart;
