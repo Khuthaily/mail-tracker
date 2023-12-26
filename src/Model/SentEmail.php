@@ -1,11 +1,11 @@
 <?php
 
-namespace jdavidbakr\MailTracker\Model;
+namespace Khuthaily\MailTracker\Model;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Collection;
 use jdavidbakr\MailTracker\Concerns\IsSentEmailModel;
-use jdavidbakr\MailTracker\Contracts\SentEmailModel;
+use Khuthaily\MailTracker\Contracts\SentEmailModel;
 
 /**
  * @property string $hash
