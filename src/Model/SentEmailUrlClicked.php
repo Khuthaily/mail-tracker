@@ -1,10 +1,10 @@
 <?php
 
-namespace jdavidbakr\MailTracker\Model;
+namespace Khuthaily\MailTracker\Model;
 
 use Illuminate\Database\Eloquent\Model;
-use jdavidbakr\MailTracker\Concerns\IsSentEmailUrlClickedModel;
-use jdavidbakr\MailTracker\Contracts\SentEmailUrlClickedModel;
+use Khuthaily\MailTracker\Concerns\IsSentEmailUrlClickedModel;
+use Khuthaily\MailTracker\Contracts\SentEmailUrlClickedModel;
 
 
 class SentEmailUrlClicked extends Model implements SentEmailUrlClickedModel
