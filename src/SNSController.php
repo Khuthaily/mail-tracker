@@ -1,6 +1,6 @@
 <?php
 
-namespace jdavidbakr\MailTracker;
+namespace Khuthaily\MailTracker;
 
 use Event;
 
@@ -9,13 +9,13 @@ use Illuminate\Http\Request;
 use GuzzleHttp\Client as Guzzle;
 use Aws\Sns\Message as SNSMessage;
 use Illuminate\Routing\Controller;
-use jdavidbakr\MailTracker\RecordBounceJob;
-use jdavidbakr\MailTracker\RecordDeliveryJob;
-use jdavidbakr\MailTracker\RecordComplaintJob;
+use Khuthaily\MailTracker\RecordBounceJob;
+use Khuthaily\MailTracker\RecordDeliveryJob;
+use Khuthaily\MailTracker\RecordComplaintJob;
 use Aws\Sns\MessageValidator as SNSMessageValidator;
-use jdavidbakr\MailTracker\Events\EmailDeliveredEvent;
-use jdavidbakr\MailTracker\Events\ComplaintMessageEvent;
-use jdavidbakr\MailTracker\Events\PermanentBouncedMessageEvent;
+use Khuthaily\MailTracker\Events\EmailDeliveredEvent;
+use Khuthaily\MailTracker\Events\ComplaintMessageEvent;
+use Khuthaily\MailTracker\Events\PermanentBouncedMessageEvent;
 
 class SNSController extends Controller
 {
