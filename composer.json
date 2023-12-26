@@ -1,13 +1,13 @@
 {
-    "name": "jdavidbakr/mail-tracker",
+    "name": "Khuthaily/mail-tracker",
     "type": "library",
     "description": "Logs and tracks all outgoing emails from Laravel",
     "keywords": [
-        "jdavidbakr",
+        "Khuthaily",
         "MailTracker"
     ],
     "minimum-stability": "dev",
-    "homepage": "https://github.com/jdavidbakr/MailTracker",
+    "homepage": "https://github.com/Khuthaily/MailTracker",
     "license": "MIT",
     "authors": [
         {
@@ -15,6 +15,12 @@
             "email": "me@jdavidbaker.com",
             "homepage": "http://www.jdavidbaker.com",
             "role": "Developer"
+        },
+        {
+            "name": "Khaled Huthaily",
+            "email": "khaled@huthaily.com",
+            "homepage": "https://huthaily.com",
+            "role": "Editor"
         }
     ],
     "require": {
@@ -34,12 +40,12 @@
     },
     "autoload": {
         "psr-4": {
-            "jdavidbakr\\MailTracker\\": "src"
+            "Khuthaily\\MailTracker\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "jdavidbakr\\MailTracker\\Tests\\": "tests"
+            "Khuthaily\\MailTracker\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -48,7 +54,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "jdavidbakr\\MailTracker\\MailTrackerServiceProvider"
+                "Khuthaily\\MailTracker\\MailTrackerServiceProvider"
             ]
         }
     }
