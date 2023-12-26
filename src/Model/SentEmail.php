@@ -41,8 +41,6 @@ class SentEmail extends Model implements SentEmailModel
     ];
 
     protected $casts = [
-        'meta' => 'collection',
-        'opened_at' => 'datetime',
-        'clicked_at' => 'datetime',
+        'meta' => 'collection'
     ];
 }
