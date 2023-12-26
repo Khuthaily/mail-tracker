@@ -1,11 +1,11 @@
 <?php
 
-namespace jdavidbakr\MailTracker\Events;
+namespace Khuthaily\MailTracker\Events;
 
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Queue\SerializesModels;
-use jdavidbakr\MailTracker\Contracts\SentEmailModel;
+use Khuthaily\MailTracker\Contracts\SentEmailModel;
 
 class EmailSentEvent implements ShouldQueue
 {
