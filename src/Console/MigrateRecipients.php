@@ -1,10 +1,10 @@
 <?php
 
-namespace jdavidbakr\MailTracker\Console;
+namespace Khuthaily\MailTracker\Console;
 
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\DB;
-use jdavidbakr\MailTracker\MailTracker;
+use Khuthaily\MailTracker\MailTracker;
 
 class MigrateRecipients extends Command
 {
