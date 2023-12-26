@@ -1,6 +1,6 @@
 <?php
 
-namespace jdavidbakr\MailTracker;
+namespace Khuthaily\MailTracker;
 
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
