@@ -54,10 +54,6 @@ Via Composer
 ```bash
 composer require jdavidbakr/mail-tracker
 ```
-Private Project Only: Don't Use
-```bash
-composer require Khuthaily/mail-tracker
-```
 
 Publish the config file and migration
 
