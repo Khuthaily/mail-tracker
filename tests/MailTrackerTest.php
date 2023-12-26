@@ -1,6 +1,6 @@
 <?php
 
-namespace jdavidbakr\MailTracker\Tests;
+namespace Khuthaily\MailTracker\Tests;
 
 use Exception;
 use Faker\Factory;
@@ -19,17 +19,17 @@ use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\Str;
-use jdavidbakr\MailTracker\Events\EmailSentEvent;
-use jdavidbakr\MailTracker\Events\LinkClickedEvent;
-use jdavidbakr\MailTracker\Exceptions\BadUrlLink;
-use jdavidbakr\MailTracker\MailTracker;
-use jdavidbakr\MailTracker\Model\SentEmail;
-use jdavidbakr\MailTracker\Model\SentEmailUrlClicked;
-use jdavidbakr\MailTracker\RecordBounceJob;
-use jdavidbakr\MailTracker\RecordComplaintJob;
-use jdavidbakr\MailTracker\RecordDeliveryJob;
-use jdavidbakr\MailTracker\RecordLinkClickJob;
-use jdavidbakr\MailTracker\RecordTrackingJob;
+use Khuthaily\MailTracker\Events\EmailSentEvent;
+use Khuthaily\MailTracker\Events\LinkClickedEvent;
+use Khuthaily\MailTracker\Exceptions\BadUrlLink;
+use Khuthaily\MailTracker\MailTracker;
+use Khuthaily\MailTracker\Model\SentEmail;
+use Khuthaily\MailTracker\Model\SentEmailUrlClicked;
+use Khuthaily\MailTracker\RecordBounceJob;
+use Khuthaily\MailTracker\RecordComplaintJob;
+use Khuthaily\MailTracker\RecordDeliveryJob;
+use Khuthaily\MailTracker\RecordLinkClickJob;
+use Khuthaily\MailTracker\RecordTrackingJob;
 use Mockery;
 use Orchestra\Testbench\Exceptions\Handler;
 use Symfony\Component\Mailer\Exception\TransportException;
@@ -698,7 +698,7 @@ class MailTrackerTest extends SetUpTest
      */
     public function it_confirms_a_subscription()
     {
-        $url = action('\jdavidbakr\MailTracker\SNSController@callback');
+        $url = action('\Khuthaily\MailTracker\SNSController@callback');
         $response = $this->post($url, [
                 'message' => json_encode([
                         // Required
@@ -725,7 +725,7 @@ class MailTrackerTest extends SetUpTest
     {
         $topic = Str::random(32);
         Config::set('mail-tracker.sns-topic', $topic);
-        $url = action('\jdavidbakr\MailTracker\SNSController@callback');
+        $url = action('\Khuthaily\MailTracker\SNSController@callback');
         $response = $this->post($url, [
                 'message' => json_encode([
                         // Required
@@ -752,7 +752,7 @@ class MailTrackerTest extends SetUpTest
     {
         $topic = Str::random(32);
         Config::set('mail-tracker.sns-topic', $topic);
-        $url = action('\jdavidbakr\MailTracker\SNSController@callback');
+        $url = action('\Khuthaily\MailTracker\SNSController@callback');
         $response = $this->post($url, [
                 'message' => json_encode([
                         // Required
@@ -783,7 +783,7 @@ class MailTrackerTest extends SetUpTest
             'notificationType' => 'Delivery',
         ];
 
-        $response = $this->post(action('\jdavidbakr\MailTracker\SNSController@callback'), [
+        $response = $this->post(action('\Khuthaily\MailTracker\SNSController@callback'), [
                 'message' => json_encode([
                     'Message' => json_encode($message),
                     'MessageId' => Str::uuid(),
@@ -814,7 +814,7 @@ class MailTrackerTest extends SetUpTest
             'notificationType' => 'Bounce',
         ];
 
-        $response = $this->post(action('\jdavidbakr\MailTracker\SNSController@callback'), [
+        $response = $this->post(action('\Khuthaily\MailTracker\SNSController@callback'), [
                 'message' => json_encode([
                     'Message' => json_encode($message),
                     'MessageId' => Str::uuid(),
@@ -845,7 +845,7 @@ class MailTrackerTest extends SetUpTest
             'notificationType' => 'Complaint',
         ];
 
-        $response = $this->post(action('\jdavidbakr\MailTracker\SNSController@callback'), [
+        $response = $this->post(action('\Khuthaily\MailTracker\SNSController@callback'), [
                 'message' => json_encode([
                     'Message' => json_encode($message),
                     'MessageId' => Str::uuid(),
