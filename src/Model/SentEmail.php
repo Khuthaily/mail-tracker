@@ -4,7 +4,7 @@ namespace Khuthaily\MailTracker\Model;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Collection;
-use jdavidbakr\MailTracker\Concerns\IsSentEmailModel;
+use Khuthaily\MailTracker\Concerns\IsSentEmailModel;
 use Khuthaily\MailTracker\Contracts\SentEmailModel;
 
 /**
