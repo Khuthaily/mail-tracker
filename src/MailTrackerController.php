@@ -1,6 +1,6 @@
 <?php
 
-namespace jdavidbakr\MailTracker;
+namespace Khuthaily\MailTracker;
 
 use App\Http\Requests;
 use Event;
@@ -8,10 +8,10 @@ use Illuminate\Foundation\Support\Providers\RouteServiceProvider;
 
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
-use jdavidbakr\MailTracker\Events\LinkClickedEvent;
-use jdavidbakr\MailTracker\Exceptions\BadUrlLink;
-use jdavidbakr\MailTracker\RecordLinkClickJob;
-use jdavidbakr\MailTracker\RecordTrackingJob;
+use Khuthaily\MailTracker\Events\LinkClickedEvent;
+use Khuthaily\MailTracker\Exceptions\BadUrlLink;
+use Khuthaily\MailTracker\RecordLinkClickJob;
+use Khuthaily\MailTracker\RecordTrackingJob;
 use Response;
 
 class MailTrackerController extends Controller
