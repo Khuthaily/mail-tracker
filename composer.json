@@ -6,7 +6,7 @@
         "Khuthaily",
         "MailTracker"
     ],
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "homepage": "https://github.com/Khuthaily/MailTracker",
     "license": "MIT",
     "authors": [
