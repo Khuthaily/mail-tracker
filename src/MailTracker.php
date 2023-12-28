@@ -256,10 +256,12 @@ class MailTracker
                     // Don't track this email
                     continue;
                 }
-                // all tracked emails have the 'X-User-ID' header
-                // save it in a variable; then, remove it
+                // all tracked emails have the 'X-User-ID' and 'X-Category' headers
+                // save them in variables; then, remove them
                 $user_id = $headers->get('X-User-ID')->getBody();
+                $category = $headers->get('X-Category')->getBody();
                 $headers->remove('X-User-ID');
+                $headers->remove('X-Category');
                 do {
                     $hash = app(Str::class)->random(32);
                     $used = MailTracker::sentEmailModel()->newQuery()->where('hash', $hash)->count();
@@ -322,16 +324,17 @@ class MailTracker
                 /** @var SentEmail $tracker */
                 $tracker = tap(MailTracker::sentEmailModel([
                     'user_id' => $user_id, // good for model relationships
+                    'message_id' => Str::uuid(),
+                    'subject' => $subject,
+                    'category' => $category, // organize emails in categories
                     'hash' => $hash,
                     'headers' => $headers->toString(),
+                    'recipient_email' => $to_email,
                     'sender_name' => $from_name,
                     'sender_email' => $from_email,
-                    // 'recipient_name' => $to_name, // no need; 'user_id' is better
-                    'recipient_email' => $to_email,
-                    'subject' => $subject,
+                    // 'recipient_name' => $to_name, // no need; 'user_id' is the identifier
                     'opens' => 0,
-                    'clicks' => 0,
-                    'message_id' => Str::uuid(),
+                    'clicks' => 0
                 ]), function(Model|SentEmailModel $sentEmail) use ($original_html, $hash) {
                     $sentEmail->fillContent($original_html, $hash);
 
